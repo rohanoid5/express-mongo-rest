@@ -1,21 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const helper = require('./helper.js');
+const helper = require('./helper/helper.js');
 const mongoose = require('mongoose');
-const bluebird = require('bluebird');
+const campground = require('./models/campground');
+const seedDb = require('./helper/seed');
 
-function campgroud(name, image, description) {
+function Campground(name, image, description) {
 	this.name = name;
 	this.image = image;
 	this.description = description;
 }
 
-let campgroundModel = (name , image) => {
-	this.name = name;
-	this.image = image;
-};
+seedDb();
 
 mongoose.connect('mongodb://localhost/campgrounds');
+mongoose.Promise = require('bluebird');
 
 const app = express();
 
@@ -24,14 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let port = helper.normalizePort(process.env.PORT || '3000');
 
-const campgroundSchema = mongoose.Schema({
-	name: String,
-	image: String,
-	description: String
-});
-
-let campgroudModel = mongoose.model('Campgrounds', campgroundSchema);
-
 app.get('/', (req, res) => {
 	res.setHeader('content-type', 'application/json');
 	res.json("location is root.")
@@ -39,7 +30,7 @@ app.get('/', (req, res) => {
 
 app.get('/campgrounds', (req, res) => {
 	res.setHeader('content-type', 'application/json');
-	campgroudModel.find({}, (err, data) => {
+	campground.find({}, (err, data) => {
 		if (err) {
 			console.log(err);
 		} else {
@@ -53,8 +44,8 @@ app.post('/campgrounds', (req, res) => {
 	const name = req.body.name;
 	const image = req.body.image;
 	const description = req.body.description;
-	let newCampground = new campgroud(name, image, description);
-	campgroudModel.create(
+	let newCampground = new Campgroud(name, image, description);
+	campground.create(
 		newCampground, (err, cground) => {
 			if (err) {
 				console.log(err);
@@ -67,7 +58,7 @@ app.post('/campgrounds', (req, res) => {
 
 app.get('/campgrounds/search', (req, res) => {
 	res.setHeader('content-type', 'application/json');
-	campgroudModel.findById(req.query.id, (err, data) => {
+	campground.findById(req.query.id, (err, data) => {
 		if(err) res.json(err);
 		else {
 			res.json(data);
