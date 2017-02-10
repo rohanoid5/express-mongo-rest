@@ -1,0 +1,406 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ca",
+				"campgroudModel"
+			],
+			[
+				"ap",
+				"application"
+			],
+			[
+				"ne",
+				"newCampground"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"c",
+				"Campgrounds"
+			],
+			[
+				"camp",
+				"campgroundSchema"
+			],
+			[
+				"r",
+				"require"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"n",
+				"newCampground"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"get",
+				"get_params"
+			],
+			[
+				"ge",
+				"get_params"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"m",
+				"margin-top"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"a",
+				"Applet"
+			],
+			[
+				"St",
+				"StringBuffer"
+			],
+			[
+				"b",
+				"boolean"
+			],
+			[
+				"cou",
+				"countInversions"
+			],
+			[
+				"pri",
+				"println"
+			],
+			[
+				"S",
+				"Students"
+			],
+			[
+				"ma",
+				"maxHeapify"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"fi",
+				"finalVal"
+			],
+			[
+				"ms",
+				"mst"
+			],
+			[
+				"pr",
+				"printMst"
+			],
+			[
+				"mst",
+				"mstSet"
+			],
+			[
+				"min",
+				"minKey"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/rohan/Desktop/WebPage/index.html",
+		"/C/Users/rohan/Desktop/AnotherPage/index.html",
+		"/C/Users/rohan/Desktop/WebPage/app.css",
+		"/C/Users/rohan/Desktop/WebPage/appJ.js",
+		"/C/Users/rohan/Downloads/AndroidJSWebView/AndroidJSWebView/src/com/prgguru/example/ChennaiIntent.java",
+		"/C/Users/rohan/Downloads/AndroidJSWebView/AndroidJSWebView/src/com/prgguru/example/AndroidJSWebView.java",
+		"/C/Users/rohan/Downloads/AndroidJSWebView/AndroidJSWebView/AndroidManifest.xml",
+		"/C/Users/rohan/Desktop/AnotherPage/app.css",
+		"/C/Users/rohan/Desktop/Node tuts/Second/app.js",
+		"/C/Users/rohan/Desktop/Node tuts/Second/helper.js",
+		"/C/Users/rohan/Desktop/WebPage/confirmed_page.html",
+		"/C/Users/rohan/Documents/New Text Document.txt",
+		"/C/Users/rohan/Desktop/Node tuts/First/contacts.js",
+		"/C/Users/rohan/Desktop/Node tuts/First/contacts.json",
+		"/C/Users/rohan/Desktop/Node tuts/First/contactsModel.js",
+		"/C/Users/rohan/Desktop/Node tuts/First/contactdataservice.js",
+		"/C/Users/rohan/Downloads/google-services (2).json",
+		"/C/Users/rohan/Desktop/New Text Document.txt",
+		"/C/Users/rohan/Desktop/Node tuts/First/data/contacts.json",
+		"/C/Users/rohan/Desktop/Node tuts/First/package.json",
+		"/H/wit/node-wit/examples/quickstart.js",
+		"/H/wit/node-wit/examples/messenger.js",
+		"/H/wit/node-wit/package.json",
+		"/H/wit/node-wit/examples/joke.js",
+		"/H/wit/node-wit/examples/basic.js",
+		"/C/Users/rohan/Desktop/landingPage.html",
+		"/C/Users/rohan/Desktop/Node tuts/program.js",
+		"/C/Users/rohan/Desktop/Java Examples/MainClass.java",
+		"/G/Coursera_Algorithms_1_and_2/algs4partII-001/14_Week_7-__Intractability/01_Introduction_to_Intractability.txt",
+		"/C/Users/rohan/Desktop/Java Examples/DemoCar.java",
+		"/C/Users/rohan/Desktop/Java Examples/CustomException.java",
+		"/C/Users/rohan/Desktop/Java Examples/colordemo.java",
+		"/C/Users/rohan/Desktop/Java Examples/Knapsack.java",
+		"/C/Users/rohan/Desktop/Java Examples/AreaDemo.java",
+		"/C/Users/rohan/Desktop/Java Examples/StringB.java",
+		"/C/Users/rohan/Desktop/Java Examples/CommandLine.java",
+		"/C/Users/rohan/Desktop/Java Examples/WrapperDemo.java",
+		"/C/Users/rohan/Desktop/Java Examples/DemoException.java",
+		"/C/Users/rohan/Desktop/Java Examples/Prims.java",
+		"/C/Users/rohan/Desktop/Java Examples/MatrixChain.java",
+		"/C/Users/rohan/Desktop/Java Examples/Job.java",
+		"/C/Users/rohan/Desktop/Java Examples/QuickSort.java",
+		"/C/Users/rohan/Desktop/Java Examples/NQueen.java",
+		"/C/Users/rohan/Desktop/Java Examples/MergeSort.java",
+		"/C/Users/rohan/Desktop/Java Examples/HeapSort.java",
+		"/C/Users/rohan/Desktop/HeapSort.java",
+		"/C/Users/rohan/Desktop/Students.java",
+		"/C/Users/rohan/Desktop/diag.json",
+		"/C/Users/rohan/Desktop/Java Examples/QuickSort",
+		"/C/Users/rohan/Desktop/Java Examples/Knapsack",
+		"/C/Users/rohan/Desktop/New Text Document (2).txt",
+		"/I/Suits/season1.txt",
+		"/I/Suits/season1-5.txt",
+		"/I/Suits/season3.txt",
+		"/I/Suits/season5.txt",
+		"/I/Suits/season2.txt",
+		"/I/Suits/season4.txt",
+		"/C/Users/rohan/Downloads/B6JMC5TK0K.txt",
+		"/C/Users/rohan/Downloads/RestCollection-sources/com/example/RestCollection.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI19.896/RestCollection.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI65.896/R.java",
+		"/H/bitBucket/v20/skybullstest/app/src/main/java/com/skybulls/adapter/ChatAdapter.java",
+		"/H/bitBucket/v16/skybullstest/app/src/main/java/com/skybulls/activities/ChatBubbleFragment.java",
+		"/C/Users/rohan/Downloads/springy-heads-master/springy-heads-master/demo/src/main/AndroidManifest.xml",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI19.880/Cuisine_.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI77.880/Cuisine.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI22.880/Example.java",
+		"/C/Users/rohan/Desktop/SHA1.txt",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/lib/src/main/res/values/strings.xml",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI11.152/MainActivity.java",
+		"/C/Users/rohan/Downloads/Assignment/Assignment/app/src/main/java/com/example/baner/assignment/MainActivity.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI26.152/MainActivity.java",
+		"/H/Android/Assignment/Assignment/app/src/main/java/com/example/baner/assignment/MainActivity.java",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/example/src/main/AndroidManifest.xml",
+		"/H/Repos/Android/Muzesto/v12/v10/Twaranga/README.md",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/example/src/main/java/com/soundcloud/android/crop/example/MainActivity.java",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/lib/src/main/AndroidManifest.xml",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/lib/src/main/res/values/styles.xml",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/lib/src/main/res/values/dimens.xml",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI35.280/MainActivity.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI63.984/Utility.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI84.688/AndroidManifest.xml",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI13.984/activity_main.xml",
+		"/C/Users/rohan/Downloads/android-crop-master/android-crop-master/lib/src/main/res/values/colors.xml",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI36.952/EditPreferences.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI05.952/ColorMixerDemo.java",
+		"/C/Users/rohan/Downloads/Ask-master/Ask-master/ask/src/main/res/values/strings.xml",
+		"/H/Repos/Android/Muzesto/v12/v10/Twaranga/app/src/main/java/com/rohan/app/fragments/SongsFragment.java",
+		"/C/Users/rohan/Downloads/drag-sort-listview-master/drag-sort-listview-master/library/res/values/dslv_attrs.xml",
+		"/H/MovieDBapp/MdbDev/CinemaBuff/app/src/main/java/com/app/rohan/cinemabuff/Utils/Constants.java",
+		"/C/Users/rohan/Downloads/spectrum-master/spectrum-master/sample/src/main/java/com/thebluealliance/spectrumsample/PreferencesDemoFragment.java",
+		"/C/Users/rohan/AppData/Local/Temp/Rar$DI20.952/preferences.xml",
+		"/C/Users/rohan/Downloads/spectrum-master/spectrum-master/sample/src/main/res/xml/demo_preferences.xml",
+		"/C/Users/rohan/Downloads/spectrum-master/spectrum-master/sample/src/main/java/com/thebluealliance/spectrumsample/DialogDemoFragment.java",
+		"/C/Users/rohan/Downloads/spectrum-master/spectrum-master/sample/src/main/java/com/thebluealliance/spectrumsample/ExternalColorChangePreference.java",
+		"/C/Users/rohan/Downloads/spectrum-master/spectrum-master/sample/src/main/java/com/thebluealliance/spectrumsample/MainActivity.java",
+		"/C/Users/rohan/Downloads/colorpicker-master/colorpicker-master/colorpicker-sample/src/main/res/layout/activity_sample.xml",
+		"/C/Users/rohan/Downloads/WaveformSeekBar-master/WaveformSeekBar-master/app/src/main/java/com/example/Main.java",
+		"/C/Users/rohan/Downloads/colorpicker-master/colorpicker-master/colorpicker-sample/src/main/java/petrov/kristiyan/sample_colorpicker/SampleActivity.java",
+		"/C/Users/rohan/Downloads/SoundEffectsSrc/src/main/java/com/example/clive/mysoundeffectsapplication/VisualizerView.java",
+		"/C/Users/rohan/Downloads/SoundEffectsSrc/src/main/java/com/example/clive/mysoundeffectsapplication/AudioFxActivity.java",
+		"/F/Games/Dark Souls II/Game/steam_appid.txt",
+		"/C/Users/rohan/Downloads/Horizon-master/Horizon-master/app/src/main/res/layout/activity_demo.xml",
+		"/C/Users/rohan/Downloads/Horizon-master/Horizon-master/app/src/main/java/com/yalantis/horizon/DemoActivity.java",
+		"/C/Users/rohan/Downloads/Horizon-master/Horizon-master/app/src/main/res/values/colors.xml",
+		"/C/Users/rohan/Downloads/DARK.SOULS.2.PLUS8TRN.LINGON/DarkSouls2+8Tr-LNG_v1.0 - INFO.txt",
+		"/C/Users/rohan/Desktop/BlogApp/app.js",
+		"/C/Users/rohan/Downloads/DARK.SOULS.2.PLUS8TRN.LINGON/VERY IMPORTANT!.txt",
+		"//192.168.10.134/client/assets/layouts/partials/landing_main.html",
+		"//192.168.10.134/client/assets/layouts/landing_page.html",
+		"//192.168.10.134/client/assets/layouts/partials/landingPage.html",
+		"//192.168.10.134/client/bower_components/angular-material/angular-material.layouts.css",
+		"//192.168.10.134/client/assets/layouts/partials/landingBoot.html",
+		"//192.168.10.134/client/assets/layouts/partials/bootnav",
+		"//192.168.10.134/client/assets/layouts/partials/bootnav.html",
+		"//192.168.10.134/client/assets/layouts/partials/landingBoot.txt",
+		"/C/Users/rohan/Documents/tryout.html",
+		"/C/Users/rohan/Documents/bootstrap",
+		"//192.168.10.134/client/app/home/home.js",
+		"//192.168.10.134/client/assets/layouts/search.html",
+		"//192.168.10.134/client/assets/layouts/message.html",
+		"/C/Users/rohan/Pictures/BTeract.html",
+		"//192.168.10.134/client/assets/layouts/dashboard.html",
+		"/H/Node/blog/app.js",
+		"/H/Node/blog/package.json",
+		"/H/Node/blog/views/blog-id.ejs",
+		"/H/Node/blog/views/blog-new.ejs",
+		"/H/Node/blog/views/index.ejs"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"campgrounds",
+			"Contact",
+			"toContact",
+			"actions",
+			"RESULT_OK",
+			"landingPage"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
