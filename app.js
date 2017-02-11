@@ -3,12 +3,18 @@ const bodyParser = require('body-parser');
 const helper = require('./helper/helper.js');
 const mongoose = require('mongoose');
 const campground = require('./models/campground');
+const comment = require('./models/comment');
 const seedDb = require('./helper/seed');
 
 function Campground(name, image, description) {
 	this.name = name;
 	this.image = image;
 	this.description = description;
+}
+
+function Comment(text, author) {
+	this.text = text;
+	this.author = author;
 }
 
 seedDb();
@@ -30,7 +36,7 @@ app.get('/', (req, res) => {
 
 app.get('/campgrounds', (req, res) => {
 	res.setHeader('content-type', 'application/json');
-	campground.find({}, (err, data) => {
+	campground.find({}).populate("comments").exec((err, data) => {
 		if (err) {
 			console.log(err);
 		} else {
@@ -44,7 +50,7 @@ app.post('/campgrounds', (req, res) => {
 	const name = req.body.name;
 	const image = req.body.image;
 	const description = req.body.description;
-	let newCampground = new Campgroud(name, image, description);
+	let newCampground = new Campground(name, image, description);
 	campground.create(
 		newCampground, (err, cground) => {
 			if (err) {
@@ -58,10 +64,33 @@ app.post('/campgrounds', (req, res) => {
 
 app.get('/campgrounds/search', (req, res) => {
 	res.setHeader('content-type', 'application/json');
-	campground.findById(req.query.id, (err, data) => {
+	campground.findById(req.query.id).populate("comments").exec((err, data) => {
 		if(err) res.json(err);
 		else {
 			res.json(data);
+		}
+	});
+});
+
+app.post('/campgrounds/:id/comments', (req, res) => {
+	res.setHeader('content-type', 'application/json');
+	campground.findById(req.params.id, (err, campgroundData) => {
+		if(err) {
+			console.log(err);
+		} else {
+			const text = req.body.text;
+			const author = req.body.author;
+			let newComment = new Comment(text, author);
+			comment.create(newComment, (err, commentData) => {
+				if(err) {
+					console.log(err);
+					res.json({err: err});
+				} else {
+					campgroundData.comments.push(commentData);
+					campgroundData.save();
+					res.json({inserted: commentData});
+				}
+			});
 		}
 	});
 });
