@@ -8,19 +8,11 @@ const seedDb = require('./helper/seed');
 const passport = require('passport');
 const localStrategy = require('passport-local');
 const user = require('./models/user');
+const campgroundRoutes = require('./routes/campgrounds');
+const commentRoutes = require('./routes/comments');
+const authRoutes = require('./routes/auth');
 
-function Campground(name, image, description) {
-	this.name = name;
-	this.image = image;
-	this.description = description;
-}
-
-function Comment(text, author) {
-	this.text = text;
-	this.author = author;
-}
-
-seedDb();
+//seedDb();
 
 mongoose.connect('mongodb://localhost/campgrounds');
 mongoose.Promise = require('bluebird');
@@ -41,107 +33,11 @@ passport.use(new localStrategy(user.authenticate()));
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
+app.use(authRoutes);
+app.use('/campgrounds', campgroundRoutes);
+app.use(commentRoutes);
 
 let port = helper.normalizePort(process.env.PORT || '3000');
-
-app.get('/', (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	res.json("location is root.")
-});
-
-app.get('/campgrounds', (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	campground.find({}).populate("comments").exec((err, data) => {
-		if (err) {
-			console.log(err);
-		} else {
-			res.json({campgrounds: data});
-		}
-	});
-});
-
-app.post('/campgrounds', (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	const name = req.body.name;
-	const image = req.body.image;
-	const description = req.body.description;
-	let newCampground = new Campground(name, image, description);
-	campground.create(
-		newCampground, (err, cground) => {
-			if (err) {
-				console.log(err);
-			} else {
-				res.json({inserted:cground})
-			}
-		}
-	);
-})
-
-app.get('/campgrounds/search', (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	campground.findById(req.query.id).populate("comments").exec((err, data) => {
-		if(err) res.json(err);
-		else {
-			res.json(data);
-		}
-	});
-});
-
-app.post('/campgrounds/:id/comments', isLoggedIn, (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	campground.findById(req.params.id, (err, campgroundData) => {
-		if(err) {
-			console.log(err);
-		} else {
-			const text = req.body.text;
-			const author = req.body.author;
-			let newComment = new Comment(text, author);
-			comment.create(newComment, (err, commentData) => {
-				if(err) {
-					console.log(err);
-					res.json({err: err});
-				} else {
-					campgroundData.comments.push(commentData);
-					campgroundData.save();
-					res.json({inserted: commentData});
-				}
-			});
-		}
-	});
-});
-
-app.post('/register', (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	let newUser = new user({username: req.body.username});
-	user.register(newUser, req.body.password, (err, userData) => {
-		if(err) console.log(err);
-		else {
-			passport.authenticate('local')(req, res, () => {
-				res.json({user: userData});
-			});
-		}
-	});
-});
-
-app.post('/login', passport.authenticate('local'), (req, res) => {
-	res.setHeader('content-type', 'application/json');
-	res.json({"status": "ok"});
-});
-
-app.get('/logout', (req, res) => {
-	req.logout();
-	res.setHeader('content-type', 'application/json');
-  res.json({"status": "Logged out"});
-});
-
-function isLoggedIn(req, res, next) {
-  if(req.isAuthenticated()) {
-    return next();
-  }
-  console.log("Not logged in");
-  res.setHeader('content-type', 'application/json');
-  res.json({"status": "Not logged in"});
-};
 
 app.listen(port, () => {
 	console.log("The app has started!");
