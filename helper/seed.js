@@ -25,6 +25,12 @@ let data = [
 ];
 
 function seedDb() {
+
+	comment.remove({}, (err, cData) => {
+		if (err) console.log(err);			
+		else console.log("Removed all comments");
+	});
+
 	campground.remove({}, (err, data) => {
 		if (err) console.log(err);
 		else {
@@ -40,7 +46,7 @@ function seedDb() {
 		campground.create(seed, (err, campgroundData) => {
 			if (err) console.log(err);
 			else {
-				console.log("Added "+campgroundData);
+				//console.log("Added "+campgroundData);
 				comment.create(
 					{
 						"text": "This is a wondeful place to visit.",
@@ -48,7 +54,7 @@ function seedDb() {
 					}, (err, commentData) => {
 						if(err) console.log(err);
 						else {
-							console.log("Added comment "+commentData);
+							//console.log("Added comment "+commentData);
 							campgroundData.comments.push(commentData);
 							campgroundData.save();
 						}

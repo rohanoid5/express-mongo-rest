@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const campground = require('./models/campground');
 const comment = require('./models/comment');
 const seedDb = require('./helper/seed');
+const passport = require('passport');
+const localStrategy = require('passport-local');
+const user = require('./models/user');
 
 function Campground(name, image, description) {
 	this.name = name;
@@ -24,8 +27,20 @@ mongoose.Promise = require('bluebird');
 
 const app = express();
 
+app.use(require('express-session')({
+	secret: 'I am a psychopath!!',
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+passport.use(new localStrategy(user.authenticate()));
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+
 
 let port = helper.normalizePort(process.env.PORT || '3000');
 
@@ -72,7 +87,7 @@ app.get('/campgrounds/search', (req, res) => {
 	});
 });
 
-app.post('/campgrounds/:id/comments', (req, res) => {
+app.post('/campgrounds/:id/comments', isLoggedIn, (req, res) => {
 	res.setHeader('content-type', 'application/json');
 	campground.findById(req.params.id, (err, campgroundData) => {
 		if(err) {
@@ -95,6 +110,39 @@ app.post('/campgrounds/:id/comments', (req, res) => {
 	});
 });
 
+app.post('/register', (req, res) => {
+	res.setHeader('content-type', 'application/json');
+	let newUser = new user({username: req.body.username});
+	user.register(newUser, req.body.password, (err, userData) => {
+		if(err) console.log(err);
+		else {
+			passport.authenticate('local')(req, res, () => {
+				res.json({user: userData});
+			});
+		}
+	});
+});
+
+app.post('/login', passport.authenticate('local'), (req, res) => {
+	res.setHeader('content-type', 'application/json');
+	res.json({"status": "ok"});
+});
+
+app.get('/logout', (req, res) => {
+	req.logout();
+	res.setHeader('content-type', 'application/json');
+  res.json({"status": "Logged out"});
+});
+
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  }
+  console.log("Not logged in");
+  res.setHeader('content-type', 'application/json');
+  res.json({"status": "Not logged in"});
+};
+
 app.listen(port, () => {
 	console.log("The app has started!");
-})
+});
