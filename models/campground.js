@@ -4,8 +4,22 @@ const campgroundSchema = mongoose.Schema({
 	name: String,
 	image: String,
 	description: String,
+	like_number: {
+		type: Number,
+		default: 0
+	},
+	likes: [
+		{ 
+			type: mongoose.Schema.Types.ObjectId, 
+			ref: "Like"
+		}
+	],
+	timestamp: { 
+		type: Date,
+		default: Date.now 
+	},
 	author: {
-        id: { 
+		id: { 
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },

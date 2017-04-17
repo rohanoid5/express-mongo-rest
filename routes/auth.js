@@ -10,13 +10,17 @@ router.get('/', (req, res) => {
 
 router.post('/register', (req, res) => {
 	res.setHeader('content-type', 'application/json');
-	let newUser = new user({username: req.body.username});
+	let newUser = new user({
+		email: req.body.email, 
+		username: req.body.username, 
+		name: req.body.name
+	});
 	user.register(newUser, req.body.password, (err, userData) => {
 		if(err) {
-            console.log(err);
-            res.json({err: err});
+			console.log(err);
+      res.json({err: err});
 		} else {
-			passport.authenticate('local')(req, res, () => {
+				passport.authenticate('local')(req, res, () => {
 				res.json({user: userData});
 			});
 		}

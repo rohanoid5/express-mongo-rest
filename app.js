@@ -11,6 +11,7 @@ const user = require('./models/user');
 const campgroundRoutes = require('./routes/campgrounds');
 const commentRoutes = require('./routes/comments');
 const authRoutes = require('./routes/auth');
+const likeRoutes = require('./routes/like');
 
 //seedDb();
 
@@ -36,6 +37,7 @@ passport.deserializeUser(user.deserializeUser());
 app.use(authRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use(commentRoutes);
+app.use(likeRoutes);
 
 let port = helper.normalizePort(process.env.PORT || '3000');
 
