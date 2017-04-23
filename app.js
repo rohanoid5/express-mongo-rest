@@ -12,6 +12,7 @@ const campgroundRoutes = require('./routes/campgrounds');
 const commentRoutes = require('./routes/comments');
 const authRoutes = require('./routes/auth');
 const likeRoutes = require('./routes/like');
+const userRoutes = require('./routes/user');
 
 //seedDb();
 
@@ -38,6 +39,7 @@ app.use(authRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use(commentRoutes);
 app.use(likeRoutes);
+app.use(userRoutes);
 
 let port = helper.normalizePort(process.env.PORT || '3000');
 

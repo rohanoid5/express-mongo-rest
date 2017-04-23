@@ -15,7 +15,13 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String
-    }
+    },
+  	followers: [
+  		{
+  			type: mongoose.Schema.Types.ObjectId,
+  			ref: "Follower"
+  		}
+  	],
 });
 
 userSchema.plugin(passportLocalMongoose);

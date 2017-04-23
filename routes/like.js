@@ -12,7 +12,6 @@ function Like(liked, author, campId) {
 }
 
 router.post('/campgrounds/:id/likes', isLoggedIn, (req, res) => {
-	let count = false;
 	res.setHeader('content-type', 'application/json');
 	campground.findById(req.params.id, (err, campgroundData) => {
 		if(err) {
@@ -82,56 +81,6 @@ router.post('/campgrounds/:id/likes', isLoggedIn, (req, res) => {
 					}
 				}
 			});
-			
-			// like.create(newlike, (err, likeData) => {
-			// 	if(err) {
-			// 		console.log(err);
-			// 		return res.json({err: err});
-			// 	} else {
-			// 		likeData.username = req.user.username;
-			// 		likeData.save();
-			// 		campgroundData.likes.push(likeData);
-			// 		campgroundData.save();
-			// 		res.json({msg: "Successfully liked."});
-			// 	}
-			// });
-			// likeList.forEach((eachLike) => {
-				
-			// });
-			// for(let i = 0; i < likeList.length; i++) {
-			// 	like.findById(likeList[i], (err, likeData) => {
-			// 		if(err) {
-			// 			return console.log(err);
-			// 		} else {
-			// 			let a = JSON.stringify(req.user._id);
-			// 			let b = JSON.stringify(likeData.author.id);
-			// 			console.log(a + " " + b);
-			// 			if(a == b) {
-			// 				console.log("Yes");
-			// 				count = true;
-			// 				console.log(count);
-			// 			}
-			// 		}
-			// 	});
-			// }
-
-			// if(!count) {
-			// 	like.create(newlike, (err, likeData) => {
-			// 		if(err) {
-			// 			console.log(err);
-			// 			return res.json({err: err});
-			// 		} else {
-			// 			likeData.author.id = req.user._id;
-			// 			likeData.author.username = req.user.username;
-			// 			likeData.save();
-			// 			campgroundData.likes.push(likeData);
-			// 			campgroundData.save();
-			// 			res.json({msg: "Successfully liked."});
-			// 		}
-			// 	});
-			// } else {
-			// 	res.json({msg: "Already liked"});
-			// }
 		}
 	});
 });
