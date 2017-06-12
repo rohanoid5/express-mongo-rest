@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
-const followerSchema = mongoose.Schema({
+const followingSchema = mongoose.Schema({
   username: {
     type: String,
     index: true,
     unique: true
   },
-  follower_id: {
+  following_id: {
     type: String
   }
 });
 
-module.exports = mongoose.model("Follower", followerSchema);
+module.exports = mongoose.model("Following", followingSchema);
