@@ -11,7 +11,6 @@ mongoose.Promise = require('bluebird');
 function Follower(username, userId, followername) {
     this.username = username;
     this.followername = followername;
-    // this.userId = userId;
 }
 
 function Following(username, userId) {

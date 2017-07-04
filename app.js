@@ -13,6 +13,7 @@ const commentRoutes = require('./routes/comments');
 const authRoutes = require('./routes/auth');
 const likeRoutes = require('./routes/like');
 const userRoutes = require('./routes/user');
+const fileUpload = require('express-fileupload');
 
 //seedDb();
 
@@ -22,14 +23,15 @@ mongoose.Promise = require('bluebird');
 const app = express();
 
 app.use(require('express-session')({
-	secret: 'I am a psychopath!!',
-	resave: false,
-	saveUninitialized: false
+    secret: 'I am a psychopath!!',
+    resave: false,
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
 
 passport.use(new localStrategy(user.authenticate()));
 passport.serializeUser(user.serializeUser());
@@ -44,5 +46,5 @@ app.use(userRoutes);
 let port = helper.normalizePort(process.env.PORT || '3000');
 
 app.listen(port, () => {
-	console.log("The app has started!");
+    console.log("The app has started!");
 });
